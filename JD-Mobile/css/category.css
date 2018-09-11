@@ -1,0 +1,158 @@
+/*分类版心*/
+body,html {
+    height: 100%;
+}
+.body_wrap {
+    width: 100%;
+    height: 100%;
+}
+/*顶部通栏*/
+.jd_cate_search {
+    width: 100%;
+    height: 45px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    z-index:999;
+}
+.jd_cate_search .jd_cate_back {
+    display: block;
+    width: 40px;
+    height: 45px;
+    padding: 12px 10px;
+    background: url("../image/cate-back.png")no-repeat;
+    background-clip: content-box;
+    background-origin: content-box;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.jd_cate_search form {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 7px 40px;
+}
+.jd_cate_search form input{
+    width: 100%;
+    padding-left: 40px;
+    height: 100%;
+    background-color: #f7f7f7;
+    border-radius: 15px;
+}
+.jd_cate_search form span{
+    position: absolute;
+    top: 2px;
+    left: 40px;
+    display: block;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    background: url("../image/search.png");
+    background-origin: content-box;
+    background-clip: content-box;
+    background-size: contain;
+}
+.jd_cate_search .jd_cate_more {
+    display: block;
+    width: 40px;
+    height: 45px;
+    padding: 12px 10px;
+    background: url("../image/cate-more.png")no-repeat center;
+    background-clip: content-box;
+    background-origin: content-box;
+    background-size: contain;
+    /*background-position: center;*/
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+/*分类主体*/
+.jd_cate_main {
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    padding-top: 45px;
+    padding-bottom: 2.8em;
+}
+/*左侧边栏*/
+.jd_cate_main .leftSlide {
+    width: 85px;
+    height: 100%;
+    float: left;
+    margin-right: 1px;
+}
+.leftSlide ul {
+    width: 85px;
+}
+.leftSlide ul li {
+    width: 85px;
+    height: 46px;
+    text-align: center;
+    line-height: 46px;
+    background-color: #f8f8f8;
+}
+.leftSlide ul li.now {
+    background-color: #fff;
+}
+.leftSlide ul li.now a {
+    color: #e93b3d;
+}
+.leftSlide ul li a {
+    color: #333;
+    text-decoration:none;
+}
+/*右侧边栏*/
+.jd_cate_main .rightSlide{
+    overflow: hidden;
+    /*float: right;*/
+    height: 100%;
+    background-color: #fff;
+}
+.rightSlide .banner {
+    width: 100%;
+    display: block;
+    padding: 7px;
+}
+.rightSlide .banner img {
+    width: 100%;
+    display: block;
+}
+.rightSlide .hot {
+    width: 100%;
+    margin-top: 19px;
+}
+.rightSlide .hot h3 {
+    padding-left: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+}
+.rightSlide .hot ul {
+    width: 100%;
+}
+.rightSlide .hot ul li {
+    width: 33.33%;
+    padding-top: 15px;
+    float: left;
+}
+.rightSlide .hot ul li a{
+    width: 100%;
+    display: block;
+}
+.rightSlide .hot ul li a img{
+    width: 62px;
+    height: 62px;
+    display: block;
+    margin: 0 auto;
+}
+.rightSlide .hot ul li a p{
+    color: #333;
+    font-size: 12px;
+    padding: 5px 0;
+    text-align: center;
+}

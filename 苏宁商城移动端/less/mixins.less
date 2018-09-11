@@ -1,0 +1,10 @@
+//定义屏幕适配基准值函数
+.adapterMixin(@index) when ( @index <= @len){
+  @media (min-width: extract(@adapterDeviceList,@index)){
+    html {
+      font-size: @baseFontSize / @psdWidth * extract(@adapterDeviceList,@index);
+    }
+  }
+  .adapterMixin( @index + 1);
+}
+

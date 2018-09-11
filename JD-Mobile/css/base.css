@@ -1,0 +1,112 @@
+
+/*<===============清除样式=================>*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    /*防止内容溢出*/
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    /*清除点击高亮显示*/
+    tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    font-size: 14px;
+    /*字体微软雅黑或手机自带*/
+    font-family: "Microsoft YaHei",sans-serif;
+    color: #333;
+}
+ul,li {
+    list-style: none;
+}
+a {
+    text-decoration:none;
+}
+input,textarea {
+    border:none;
+    outline:none;
+    /*不允许改变尺寸*/
+    resize: none;
+    /*清除外观样式*/
+    -webkit-appearance:none;
+}
+
+
+
+/*<===============常用样式=================>*/
+
+.f_left{
+    float: left;
+}
+.f_right {
+    float: right;
+}
+.clearfix::before,
+.clearfix::after {
+    content: '';
+    visibility: hidden;
+    display: block;
+    height: 0;
+    line-height: 0;
+    clear:both;
+}
+.m_l10 {
+    margin-left: 10px;
+}
+.m_r10 {
+    margin-right: 10px;
+}
+.m_t10 {
+    margin-top: 10px;
+}
+.m_b10 {
+    margin-bottom: 10px;
+}
+/*精灵图通用样式*/
+/*[class^='icon_'],[class*=' icon_']{
+    background-repeat: no-repeat;
+    background-image: url('../images/sprites.png');
+    background-size: 200px 200px;
+}*/
+
+/*底部导航栏*/
+.jd_commonNav {
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    z-index:1009;
+    -webkit-transform: translateZ(0);
+}
+.jd_commonNav a {
+    display: block;
+    width: 20%;
+    float: left;
+    height: 2.8em;
+    position: relative;
+}
+.jd_commonNav a div {
+    padding: 0.25rem 0;
+    /*width: 80%;*/
+    width: 3.6em;
+    /*position: absolute;*/
+    /*left: 50%;*/
+    margin: 0 auto;
+
+}
+.jd_commonNav a div img{
+    display: block;
+    width: 3.6em;
+    margin-top: -0.2em;
+}
+
+/*占位盒*/
+.box {
+    width: 100%;
+    height: 2.8em;
+}

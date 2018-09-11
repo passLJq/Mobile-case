@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+//变量
+
+//适配的主流屏幕尺寸集合
+@adapterDeviceList:320px, 360px, 375px, 384px, 400px, 414px, 424px, 480px, 540px, 640px, 720px, 750px;
+
+//尺寸集合的长度
+@len:length(@adapterDeviceList);
+
+//设计尺寸
+@psdWidth:750px;
+
+//预设基准值
+@baseFontSize:50px;
+
+//主题颜色
+@baseColor:rgb(255,192,1);
+
+//固定居中通栏盒子样式
+.autoContainer(){
+  position: fixed;
+  width: 100%;
+  max-width: 750px;
+  min-width: 320px;
+  z-index: 9999999;
+}

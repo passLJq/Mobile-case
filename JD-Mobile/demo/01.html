@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>流式布局</title>
+    </head>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .box {
+          width: 200px;
+          height: 200px;
+          margin: 100px auto;
+          background-color: #ccc;
+      }
+      
+    </style>
+    <body>
+      <div class="box">
+         
+      </div>
+    </body>
+    <script>
+    window.onload = function (){
+      tap(document.querySelector('.box'),function(){
+        console.log('tap');
+      })
+      bindSwipeEvent(document.querySelector('.box'),function(e){
+        console.log(this);
+        console.log(e);
+        console.log('左');
+      },function(e){
+        console.log(this);
+        console.log(e);
+        console.log('右');
+      })
+    }
+    var bindSwipeEvent = function(DOM,leftCallback,rightCallback){
+        var touchX = 0;
+        var distanceX = 0;
+        var isMove = false;
+        DOM.addEventListener('touchstart',function(e){
+          touchX = e.touches[0].clientX;
+        });
+        DOM.addEventListener('touchmove',function(e){
+          var moveX = e.touches[0].clientX;
+          distanceX = moveX - touchX;
+          isMove = true;
+        });
+        DOM.addEventListener('touchend',function(e){
+          if(!isMove) return;
+          if(Math.abs(distanceX)>50){
+            if(distanceX > 0) {
+              rightCallback && rightCallback.call(this,e);
+            }else {
+              leftCallback && leftCallback.call(this,e);
+            }
+          }
+          //参数重置
+          isMove = false;
+          touchX = 0;
+          distanceX = 0;
+        });
+      }
+      var tap = function(DOM,callback){
+        var isMove = false;
+        var startTime = 0;
+        DOM.addEventListener('touchstart',function(e){
+          startTime = Date.now();
+        });
+        DOM.addEventListener('touchmove',function(e){
+          isMove = true;
+        });
+        DOM.addEventListener('touchend',function(e){
+          if(!isMove && (Date.now()-startTime)<150){
+            callback && callback.call(this,e);
+          }
+          //参数重置
+          isMove = false;
+        });
+      }
+    </script>
+</html>
